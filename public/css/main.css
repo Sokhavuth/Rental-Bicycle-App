@@ -1,0 +1,76 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: rgb(175, 172, 172);
+}
+
+.site{
+  width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.site-header{
+  font-size: 40px;
+  font-weight: bold;
+  padding: 40px 20px;
+  background: rgb(54, 135, 240);
+  color: white;
+  border-radius: 4px 4px 0 0;
+  text-align: center;
+}
+
+ul.menu{
+  list-style: none;
+  background: lavender;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li{
+  display: inline-block;
+  padding: 10px;
+}
+
+.menu li:hover{
+  background: rgb(204, 204, 207);
+  cursor: pointer;
+}
+
+.main .content{
+  background: rgb(243, 245, 245);
+  margin-top: 20px;
+  padding: 10px;
+  min-height: 400px;
+}
+
+.main .top-widget input{
+  float: right;
+}
+
+.main .bottom-widget{
+  margin-top: 50px;
+}
+
+.main .bottom-widget select{
+  min-width: 150px;
+  padding: 1px 0;
+}
+
+.main .bottom-widget input{
+  min-width: 70px;
+}
+
+.main .bottom-widget .search{
+  float: right;
+}
+
+footer{
+  background: lightgrey;
+  margin-top: 20px;
+  padding: 50px 0;
+  text-align: center;
+  border-radius: 4px;
+}
