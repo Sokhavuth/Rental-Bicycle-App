@@ -1,13 +1,12 @@
 #\app.py
-import os
+import os, config
 from bottle import route, run
-from controllers import index
+from controllers import index, bikeform
 from public import setup
   
 @route('/')
 def main():
-  kargs = {"site_title":"RENTAL BICYCLE APP", "message":"កម្មវិធី​គេហទំព័រ!"}
-  return index.render(**kargs)
+  return index.render(**config.kargs)
   
 if 'DYNO' in os.environ:
   run(host='0.0.0.0', port=os.environ.get('PORT', 9000))

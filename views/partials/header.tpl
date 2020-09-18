@@ -20,7 +20,7 @@
 
       <nav>
         <ul class="menu" id="menu">
-          <li><a>Bicycle</a></li>
+          <li><a href="/">Bicycle</a></li>
           <li><a>Customer</a></li>
           <li><a>Register</a></li>
           <li><a>Top Rental</a></li>
