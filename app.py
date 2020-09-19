@@ -6,7 +6,6 @@ from public import setup
   
 @route('/')
 def main():
-  config.kargs['message'] = ""
   return index.render(**config.kargs)
   
 if 'DYNO' in os.environ:

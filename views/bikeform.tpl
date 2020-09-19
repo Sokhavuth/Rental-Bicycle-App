@@ -27,6 +27,7 @@
       <a></a><input type="submit" />
     </form>
     <p>{{data['message']}}</p>
+    %data['message'] = ""
   </div><!--content-->
 
 </div><!--main-->
