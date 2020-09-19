@@ -1,3 +1,4 @@
+//\public\js\main.js
 class Bicycle{
   bicycleForm(formId){
     var brand = document.forms[formId]['fbrand'].value;
@@ -13,11 +14,11 @@ class Bicycle{
       var numberResult = numberRGEX.test(price);
       var intResult = (intRGEX.test(year) && intRGEX.test(amount));
       if(!numberResult){
-        alert('Please enter a number.');
+        alert('Please enter a number for price.');
         return false;
       }
       if(!intResult){
-        alert('Please enter a whole number.');
+        alert('Please enter a whole number for year and amount.');
         return false;
       }
     }
