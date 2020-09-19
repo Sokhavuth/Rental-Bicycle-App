@@ -15,7 +15,7 @@ def getFormData():
   price = request.forms.get("fprice")
 
   if not (re.findall("[a-zA-Z]", brand) and re.findall("[a-zA-Z]", country)):
-    config.kargs['message'] = "Country name could contain only letter."
+    config.kargs['message'] = "Brand and Country name could contain only letter."
     return template('bikeform', data=config.kargs)
 
   elif not (re.findall("[0-9]", year) and re.findall("[0-9]", amount)):
@@ -25,7 +25,7 @@ def getFormData():
   elif not (re.findall(r"[-+]?\d*\.\d+|\d+", price)):
     config.kargs['message'] = "Price must be a number."
     return template('bikeform', data=config.kargs)
-    
+
   else:
     config.kargs['message'] = "You have been entering the right data."
     return template('bikeform', data=config.kargs)
