@@ -18,14 +18,15 @@
 <div class="main" id="main">
   <div class="content" id="content">
     <span>BICYCLE ENTRY FORM</span>
-    <form id="bikeform" method="POST" action="/bikeform" onsubmit="return Bicycle.bicycleForm('bikeform')">
-      <a>Brand:</a><input name="fbrand" type="text" />
-      <a>Country:</a><input name="fcountry" type="text" />
-      <a>Year:</a><input name="fyear" type="text" />
-      <a>Amount:</a><input name="famount" type="text" />
-      <a>Price:</a><input name="fprice" type="text" />
+    <form id="bikeform" method="POST" action="/bikeform" onsubmit="return bicycle.bicycleForm('bikeform')">
+      <a>Brand:</a><input name="fbrand" type="text" required />
+      <a>Country:</a><input name="fcountry" type="text" required />
+      <a>Year:</a><input name="fyear" type="text" required />
+      <a>Amount:</a><input name="famount" type="text" required />
+      <a>Price:</a><input name="fprice" type="text" required />
       <a></a><input type="submit" />
     </form>
+    <p>{{data['message']}}</p>
   </div><!--content-->
 
 </div><!--main-->

@@ -1,4 +1,4 @@
-#public\setup.py
+#\public\setup.py
 from bottle import route, static_file
 
 @route('/static/scripts/<filename>')    
