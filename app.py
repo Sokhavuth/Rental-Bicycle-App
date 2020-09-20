@@ -3,11 +3,11 @@ import os, json, config
 from bottle import route, run
 from controllers import index, bikeform
 from public import setup
-from models import selectBicycle
+from models import bicycledb
   
 @route('/')
 def main():
-  config.kargs['bicycles'] = json.dumps(selectBicycle.select())
+  config.kargs['bicycles'] = json.dumps(bicycledb.select())
   return index.render(config.kargs)
   
 if 'DYNO' in os.environ:

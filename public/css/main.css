@@ -1,5 +1,6 @@
 a{
   text-decoration: none;
+  color: teal;
 }
 
 body{
@@ -101,7 +102,7 @@ td.option{
 
 td.option .edit:hover{
   cursor:pointer;
-  color:rgba(6, 148, 6, 0.753);
+  color:rgb(5, 189, 189);
 }
 
 td.option .delete:hover{

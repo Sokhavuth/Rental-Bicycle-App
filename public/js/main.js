@@ -43,7 +43,7 @@ class Bicycle{
         for(var j in bicycles[i]){
           html += "<td>" + bicycles[i][j] + "</td>";
         }
-        html += `<td class="option"><a onclick="alert(${i+1},'bikeform')" class="edit" id="'+i+'">Edit</a>|<a onclick="alert(${i+1})" class="delete" >Delete</a></td>`;
+        html += `<td class="option"><a href="/bikeform/edit/${i+1}" class="edit">Edit</a>|<a href="/bikeform/delete/${i+1}" class="delete" >Delete</a></td>`;
         html += "</tr>";
       }
 

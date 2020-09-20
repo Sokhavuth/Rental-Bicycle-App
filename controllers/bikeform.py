@@ -1,11 +1,26 @@
 #\controllers\bikeform.py
 import config, re
-from bottle import template, route, request
-from models import insertBicycle
+from bottle import template, route, request, redirect
+from models import bicycledb
 
 @route("/bikeform")
 def renderForm():
+  if 'rowedit' in config.kargs:
+    del config.kargs['rowedit']
+    
   return template('bikeform', data=config.kargs)
+
+@route("/bikeform/edit/<id:int>")
+def editForm(id):
+  config.kargs['rowedit'] = bicycledb.edit(id)
+  config.kargs['id'] = id
+  return template('bikeform', data=config.kargs)
+
+@route("/bikeform/delete/<id:int>")
+def deleteForm(id):
+  config.kargs['id'] = id
+  bicycledb.delete(id)
+  redirect('/')
 
 @route("/bikeform", method="POST")
 def getFormData():
@@ -28,5 +43,11 @@ def getFormData():
     return template('bikeform', data=config.kargs)
 
   else:
-    insertBicycle.insert(brand, country, int(year), int(amount), float(price))
-    return template('bikeform', data=config.kargs)
+    if 'rowedit' in config.kargs:
+      bicycledb.update(brand, country, int(year), int(amount), float(price), config.kargs['id'])
+      del config.kargs['rowedit']
+      redirect('/')
+
+    else:
+      bicycledb.insert(brand, country, int(year), int(amount), float(price))
+      return template('bikeform', data=config.kargs)
