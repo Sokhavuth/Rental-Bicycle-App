@@ -7,16 +7,16 @@ from models import bicycledb
 def renderForm():
   if 'rowedit' in config.kargs:
     del config.kargs['rowedit']
-    
+
   return template('bikeform', data=config.kargs)
 
-@route("/bikeform/edit/<id:int>")
+@route("/bikeform/edit/<id>")
 def editForm(id):
   config.kargs['rowedit'] = bicycledb.edit(id)
   config.kargs['id'] = id
   return template('bikeform', data=config.kargs)
 
-@route("/bikeform/delete/<id:int>")
+@route("/bikeform/delete/<id>")
 def deleteForm(id):
   config.kargs['id'] = id
   bicycledb.delete(id)

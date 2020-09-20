@@ -24,6 +24,7 @@ def insert(*bicycle):
 
 def select():
   conn = sqlite3.connect('sqlite.db')
+  conn.execute("VACUUM")
   cursor = conn.cursor()
 
   sql ='''CREATE TABLE IF NOT EXISTS BICYCLE(
