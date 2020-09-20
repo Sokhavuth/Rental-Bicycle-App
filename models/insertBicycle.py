@@ -10,7 +10,7 @@ def insert(*bicycle):
     COUNTRY TEXT,
     YEAR INT,
     AMOUNT INT,
-    PRINCE FLOAT
+    PRICE FLOAT
   )
   '''
 

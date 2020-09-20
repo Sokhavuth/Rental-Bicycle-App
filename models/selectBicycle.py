@@ -10,7 +10,7 @@ def select():
     COUNTRY TEXT,
     YEAR INT,
     AMOUNT INT,
-    PRINCE FLOAT
+    PRICE FLOAT
   )
   '''
 
