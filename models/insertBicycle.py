@@ -1,3 +1,4 @@
+#\models\insertBicycle.py
 import sqlite3
 
 def insert(*bicycle):
