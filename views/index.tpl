@@ -22,6 +22,8 @@
         <input type="text" /><input type="button" value="Search" />
       </span>
     </div><!--bottom-widget-->
+    <div id="table"></div>
+    <script>bicycle.showBicycle({{!data['bicycles']}})</script>
   </div><!--content-->
 
   %include("./partials/sidebar.tpl")

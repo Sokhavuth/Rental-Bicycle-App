@@ -1,5 +1,6 @@
 //\public\js\main.js
 class Bicycle{
+
   bicycleForm(formId){
     var brand = document.forms[formId]['fbrand'].value;
     var country = document.forms[formId]['fcountry'].value;
@@ -23,6 +24,35 @@ class Bicycle{
       }
     }
   }
+
+  showBicycle(bicycles){
+    var html = '';
+    
+    if(bicycles.length > 0){
+      html += "<table>";
+      html += "<tr>";
+      for(var k in {id:0, brand:0, country:0, year:0, amount:0, price:0}){
+        html += "<th>" + k.toUpperCase() + "</th>";
+      }
+      html += "<th>OPTION</th>";
+      html += "</tr>";
+
+      for(var i=0; i<bicycles.length; i++){
+        html += "<tr>";
+        html +=  "<td>" + (i+1) + "</td>";
+        for(var j in bicycles[i]){
+          html += "<td>" + bicycles[i][j] + "</td>";
+        }
+        html += `<td class="option"><a onclick="alert(${i+1},'bikeform')" class="edit" id="'+i+'">Edit</a>|<a onclick="alert(${i+1})" class="delete" >Delete</a></td>`;
+        html += "</tr>";
+      }
+
+      html += "</table>";
+    }
+
+    document.getElementById("table").innerHTML = html;
+  }
+
 }//end of class
 
 var bicycle = new Bicycle();

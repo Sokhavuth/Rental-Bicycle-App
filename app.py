@@ -1,12 +1,14 @@
 #\app.py
-import os, config
+import os, json, config
 from bottle import route, run
 from controllers import index, bikeform
 from public import setup
+from models import selectBicycle
   
 @route('/')
 def main():
-  return index.render(**config.kargs)
+  config.kargs['bicycles'] = json.dumps(selectBicycle.select())
+  return index.render(config.kargs)
   
 if 'DYNO' in os.environ:
   run(host='0.0.0.0', port=os.environ.get('PORT', 9000))

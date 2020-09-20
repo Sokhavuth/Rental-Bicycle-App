@@ -1,6 +1,7 @@
 #\controllers\bikeform.py
 import config, re
 from bottle import template, route, request
+from models import insertBicycle
 
 @route("/bikeform")
 def renderForm():
@@ -14,8 +15,8 @@ def getFormData():
   amount = request.forms.get("famount")
   price = request.forms.get("fprice")
 
-  if not (re.findall("[a-zA-Z]", brand) and re.findall("[a-zA-Z]", country)):
-    config.kargs['message'] = "Brand and Country name could contain only letter."
+  if not re.findall("[a-zA-Z]", country):
+    config.kargs['message'] = "Country name could contain only letter."
     return template('bikeform', data=config.kargs)
 
   elif not (re.findall("[0-9]", year) and re.findall("[0-9]", amount)):
@@ -27,5 +28,5 @@ def getFormData():
     return template('bikeform', data=config.kargs)
 
   else:
-    config.kargs['message'] = "You have been entering the right data."
+    insertBicycle.insert(brand, country, int(year), int(amount), float(price))
     return template('bikeform', data=config.kargs)

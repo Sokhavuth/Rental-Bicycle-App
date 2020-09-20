@@ -76,6 +76,44 @@ ul.menu{
   cursor: pointer;
 }
 
+table {
+  border-collapse: collapse;
+  width:100%;
+  margin-top:20px;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th {
+  height: 40px;
+}
+
+td {
+  padding: 5px;
+  text-align: left;
+}
+
+td.option{
+  text-align:center;
+}
+
+td.option .edit:hover{
+  cursor:pointer;
+  color:rgba(6, 148, 6, 0.753);
+}
+
+td.option .delete:hover{
+  cursor:pointer;
+  color:red;
+}
+
+td.option img:hover{
+  opacity:.5;
+  cursor:pointer;
+}
+
 footer{
   background: lightgrey;
   margin-top: 20px;
