@@ -13,10 +13,14 @@
     </div>
     <div class="bottom-widget">
       <span>
-        <select>
+        <select id="bikekey">
           <option value="Brand" >Brand</option>
+          <option value="Country" >Country</option>
+          <option value="Year" >Year</option>
+          <option value="Amount" >Amount</option>
+          <option value="Price" >Price</option>
         </select>
-        <input type="button" value="Sort" />
+        <input onclick="bicycle.sortBicycle()" type="button" value="Sort" />
       </span>
       <span class="search">
         <input type="text" /><input type="button" value="Search" />

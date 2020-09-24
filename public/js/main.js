@@ -53,6 +53,17 @@ class Bicycle{
     document.getElementById("table").innerHTML = html;
   }
 
+  sortBicycle(bicycles){
+    var element = document.getElementById("bikekey");
+    var selectedIndex = element.selectedIndex;
+    var key = element.options[selectedIndex].value;
+
+    window.location.href = "/bicycle/" + key;
+    //Bicycle.sorted = true;
+    //Bicycle.selectedIndex = selectedIndex;
+    //Bicycle.showBicycle();
+  }
+
 }//end of class
 
 var bicycle = new Bicycle();

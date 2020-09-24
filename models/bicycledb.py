@@ -80,3 +80,15 @@ def delete(id):
 
   conn.commit()
   conn.close()
+
+def sort(brand):
+  conn = sqlite3.connect('sqlite.db')
+  cursor = conn.cursor()
+  
+  cursor.execute("SELECT * from BICYCLE ORDER BY " + brand)
+  bicycles = cursor.fetchall()
+
+  conn.commit()
+  conn.close()
+
+  return bicycles

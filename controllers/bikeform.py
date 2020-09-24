@@ -1,5 +1,5 @@
 #\controllers\bikeform.py
-import config, re
+import config, re, json
 from bottle import template, route, request, redirect
 from models import bicycledb
 
@@ -21,6 +21,11 @@ def deleteForm(id):
   config.kargs['id'] = id
   bicycledb.delete(id)
   redirect('/')
+
+@route("/bicycle/<brand>")
+def sortBicycle(brand):
+  config.kargs['bicycles'] = json.dumps(bicycledb.sort(brand))
+  return template('index', data=config.kargs)
 
 @route("/bikeform", method="POST")
 def getFormData():
