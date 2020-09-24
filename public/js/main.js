@@ -25,7 +25,7 @@ class Bicycle{
     }
   }
 
-  showBicycle(bicycles){
+  showBicycle(bicycles,sortIndex){
     var html = '';
     
     if(bicycles.length > 0){
@@ -51,17 +51,17 @@ class Bicycle{
     }
 
     document.getElementById("table").innerHTML = html;
+    document.getElementById("bikekey").selectedIndex = sortIndex;
+    
   }
 
-  sortBicycle(bicycles){
+  sortBicycle(){
     var element = document.getElementById("bikekey");
-    var selectedIndex = element.selectedIndex;
-    var key = element.options[selectedIndex].value;
+    var sortIndex = element.selectedIndex;
+    var key = element.options[sortIndex].value;
 
-    window.location.href = "/bicycle/" + key;
-    //Bicycle.sorted = true;
-    //Bicycle.selectedIndex = selectedIndex;
-    //Bicycle.showBicycle();
+    window.location.href = "/bicycle/" + key + "/" + sortIndex;
+  
   }
 
 }//end of class

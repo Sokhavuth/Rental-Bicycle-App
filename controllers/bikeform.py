@@ -22,9 +22,10 @@ def deleteForm(id):
   bicycledb.delete(id)
   redirect('/')
 
-@route("/bicycle/<brand>")
-def sortBicycle(brand):
+@route("/bicycle/<brand>/<sortIndex>")
+def sortBicycle(brand,sortIndex):
   config.kargs['bicycles'] = json.dumps(bicycledb.sort(brand))
+  config.kargs['sortIndex'] = sortIndex
   return template('index', data=config.kargs)
 
 @route("/bikeform", method="POST")

@@ -27,7 +27,7 @@
       </span>
     </div><!--bottom-widget-->
     <div id="table"></div>
-    <script>bicycle.showBicycle({{!data['bicycles']}})</script>
+    <script>bicycle.showBicycle({{!data['bicycles']}}, {{!data['sortIndex']}})</script>
   </div><!--content-->
 
   %include("./partials/sidebar.tpl")
