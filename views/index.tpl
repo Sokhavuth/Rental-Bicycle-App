@@ -23,7 +23,7 @@
         <input onclick="bicycle.sortBicycle()" type="button" value="Sort" />
       </span>
       <span class="search">
-        <input type="text" /><input type="button" value="Search" />
+        <input id="query" type="text" /><input onclick="bicycle.searchBicycle()" type="button" value="Search" />
       </span>
     </div><!--bottom-widget-->
     <div id="table"></div>

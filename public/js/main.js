@@ -41,9 +41,10 @@ class Bicycle{
         html += "<tr>";
         html +=  "<td>" + (i+1) + "</td>";
         for(var j in bicycles[i]){
-          html += "<td>" + bicycles[i][j] + "</td>";
+          if(j > 0)
+            html += "<td>" + bicycles[i][j] + "</td>";
         }
-        html += `<td class="option"><a href="/bikeform/edit/${i+1}" class="edit">Edit</a>|<a href="/bikeform/delete/${i+1}" class="delete" >Delete</a></td>`;
+        html += `<td class="option"><a href="/bikeform/edit/${bicycles[i][0]}" class="edit">Edit</a>|<a href="/bikeform/delete/${bicycles[i][0]}" class="delete" >Delete</a></td>`;
         html += "</tr>";
       }
 
@@ -62,6 +63,11 @@ class Bicycle{
 
     window.location.href = "/bicycle/" + key + "/" + sortIndex;
   
+  }
+
+  searchBicycle(){
+    var query = $("#query").val();
+    location.href= "/search/bicycle/" + query;
   }
 
 }//end of class

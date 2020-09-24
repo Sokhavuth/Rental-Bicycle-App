@@ -8,7 +8,6 @@ from models import bicycledb
 @route('/')
 def main():
   config.kargs['bicycles'] = json.dumps(bicycledb.select())
-  config.kargs['sortIndex'] = 0
   return index.render(config.kargs)
   
 if 'DYNO' in os.environ:

@@ -24,7 +24,6 @@ def insert(*bicycle):
 
 def select():
   conn = sqlite3.connect('sqlite.db')
-  conn.execute("VACUUM")
   cursor = conn.cursor()
 
   sql ='''CREATE TABLE IF NOT EXISTS BICYCLE(
@@ -38,7 +37,7 @@ def select():
 
   cursor.execute(sql)
 
-  cursor.execute("SELECT * from BICYCLE")
+  cursor.execute("SELECT ROWID, * from BICYCLE")
 
   bicycles = cursor.fetchall()
   
@@ -51,7 +50,7 @@ def edit(id):
   conn = sqlite3.connect('sqlite.db')
   cursor = conn.cursor()
 
-  cursor.execute("SELECT * from BICYCLE WHERE ROWID = " + str(id))
+  cursor.execute("SELECT ROWID, * from BICYCLE WHERE ROWID = " + str(id))
 
   bicycle = cursor.fetchone()
   
@@ -85,7 +84,25 @@ def sort(brand):
   conn = sqlite3.connect('sqlite.db')
   cursor = conn.cursor()
   
-  cursor.execute("SELECT * from BICYCLE ORDER BY " + brand)
+  cursor.execute("SELECT ROWID, * from BICYCLE ORDER BY " + brand)
+  bicycles = cursor.fetchall()
+
+  conn.commit()
+  conn.close()
+
+  return bicycles
+
+def search(query):
+  conn = sqlite3.connect('sqlite.db')
+  cursor = conn.cursor()
+  
+  sql = "SELECT ROWID, * from BICYCLE WHERE BRAND LIKE '%"+query+"%'"
+  sql += " OR COUNTRY LIKE '%"+query+"%'"
+  sql += " OR YEAR LIKE '%"+query+"%'"
+  sql += " OR AMOUNT LIKE '%"+query+"%'"
+  sql += " OR PRICE LIKE '%"+query+"%'"
+
+  cursor.execute(sql)
   bicycles = cursor.fetchall()
 
   conn.commit()

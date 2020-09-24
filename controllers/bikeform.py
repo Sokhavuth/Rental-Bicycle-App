@@ -28,6 +28,11 @@ def sortBicycle(brand,sortIndex):
   config.kargs['sortIndex'] = sortIndex
   return template('index', data=config.kargs)
 
+@route("/search/bicycle/<query>")
+def searchBicycle(query):
+  config.kargs['bicycles'] = json.dumps(bicycledb.search(query))
+  return template('index', data=config.kargs)
+
 @route("/bikeform", method="POST")
 def getFormData():
   brand = request.forms.get("fbrand")
