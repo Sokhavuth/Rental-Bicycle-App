@@ -41,15 +41,15 @@ def getFormData():
   amount = request.forms.get("famount")
   price = request.forms.get("fprice")
 
-  if not re.findall("[a-zA-Z]", country):
+  if re.search("[0-9]", country):
     config.kargs['message'] = "Country name could contain only letter."
     return template('bikeform', data=config.kargs)
 
-  elif not (re.findall("[0-9]", year) and re.findall("[0-9]", amount)):
+  elif not (re.match("^[0-9]+$", year) and re.match("^[0-9]+$", amount)):
     config.kargs['message'] = "Year and amount must be whole number."
     return template('bikeform', data=config.kargs)
 
-  elif not (re.findall(r"[-+]?\d*\.\d+|\d+", price)):
+  elif not (re.match(r"\A[-+]?\d*\.\d+|\d+\Z", price)):
     config.kargs['message'] = "Price must be a number."
     return template('bikeform', data=config.kargs)
 
