@@ -61,4 +61,4 @@ def getFormData():
 
     else:
       bicycledb.insert(brand, country, int(year), int(amount), float(price))
-      return template('bikeform', data=config.kargs)
+      redirect('/')

@@ -1,7 +1,7 @@
 #\app.py
 import os, json, config
 from bottle import route, run
-from controllers import index, bikeform
+from controllers import index, bikeform, customer
 from public import setup
 from models import bicycledb
   
