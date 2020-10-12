@@ -152,7 +152,7 @@ class Bicycle{
     }
   }
 
-  showRegister(registers, sortIndex){
+  showRegisters(registers, sortIndex){
 
     var html = '';
     

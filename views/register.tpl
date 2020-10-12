@@ -23,7 +23,7 @@
     </div>
     <div id="table"></div>
     
-    <script>bicycle.showRegister()</script>
+    <script>bicycle.showRegisters()</script>
     
   </div><!--content-->
 
