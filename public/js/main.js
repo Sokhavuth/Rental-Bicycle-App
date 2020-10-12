@@ -152,8 +152,7 @@ class Bicycle{
     }
   }
 
-  showRegisters(registers, sortIndex){
-
+  showRegister(registers, sortIndex){
     var html = '';
     
     if(registers.length > 0){

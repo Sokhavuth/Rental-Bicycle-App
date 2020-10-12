@@ -23,7 +23,12 @@
     </div>
     <div id="table"></div>
     
-    <script>bicycle.showRegisters()</script>
+    <script>
+      $( document ).ready(function() {
+        bicycle.showRegister({{!data['registers']}}, {{!data['sortIndex']}});
+      });
+    
+    </script>
     
   </div><!--content-->
 
