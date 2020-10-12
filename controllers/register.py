@@ -3,6 +3,8 @@ import config, re, json, datetime
 from bottle import template, route, request, redirect
 from models import customerdb, bicycledb, registerdb
 
+config.kargs['sortIndex'] = 0
+
 @route('/register')
 def displayRegister():
   config.kargs['registers'] = json.dumps(registerdb.select())
