@@ -153,8 +153,6 @@ class Bicycle{
   }
 
   showRegister(registers, sortIndex){
-    registers = JSON.parse(registers);
-    sortIndex = JSON.parse(sortIndex);
 
     var html = '';
     

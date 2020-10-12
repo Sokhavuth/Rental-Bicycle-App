@@ -23,7 +23,7 @@
     </div>
     <div id="table"></div>
     
-    <script>bicycle.showRegister('{{!data["registers"]}}', '{{!data["sortIndex"]}}')</script>
+    <script>bicycle.showRegister()</script>
     
   </div><!--content-->
 
