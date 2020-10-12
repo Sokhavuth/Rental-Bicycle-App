@@ -204,6 +204,49 @@ class Bicycle{
     location.href= "/search/register/" + query;
   }
 
+  showTopRental(toptentals){
+    var customers = toptentals[0];
+    var brands = toptentals[1];
+    var html = '';
+    
+    if(customers.length > 0){
+      html += "<table>";
+      html += "<tr>";
+      for(var k in {rate:1, 'top customers':1}){
+        html += "<th>" + k.toUpperCase() + "</th>";
+      }
+      html += "</tr>";
+
+      for(var i=0; i<customers.length; i++){
+        html += "<tr>";
+        html +=  "<td style='width:80px;text-align:center;'>" + (i+1) + "</td>";
+        html += "<td>" + customers[i][0] + "</td>";
+        html += "</tr>";
+      }
+      html += "</table>";
+    }
+    document.getElementById("table-customer").innerHTML = html;
+
+    if(brands.length > 0){
+      html = '';
+      html += "<table>";
+      html += "<tr>";
+      for(var k in {rate:1, 'popular bicycles':1}){
+        html += "<th>" + k.toUpperCase() + "</th>";
+      }
+      html += "</tr>";
+
+      for(var i=0; i<brands.length; i++){
+        html += "<tr>";
+        html +=  "<td style='width:80px;text-align:center;'>" + (i+1) + "</td>";
+        html += "<td>" + brands[i][0] + "</td>";
+        html += "</tr>";
+      }
+      html += "</table>";
+    }
+    document.getElementById("table-bicycle").innerHTML = html;
+  }
+
 }//end of class
 
 var bicycle = new Bicycle();

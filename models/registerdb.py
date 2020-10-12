@@ -94,3 +94,22 @@ def search(query):
   conn.close()
 
   return registers
+
+def getTopRental():
+  conn = sqlite3.connect('sqlite.db')
+  cursor = conn.cursor()
+
+  sql = "SELECT CUSTOMER, COUNT(*) FROM REGISTER GROUP BY CUSTOMER ORDER BY COUNT(*) DESC LIMIT 10"
+
+  cursor.execute(sql)
+  customers = cursor.fetchall()
+
+  sql = "SELECT BRAND, COUNT(*) FROM REGISTER GROUP BY BRAND ORDER BY COUNT(*) DESC LIMIT 10"
+
+  cursor.execute(sql)
+  brands = cursor.fetchall()
+  
+  conn.commit()
+  conn.close()
+
+  return (customers, brands)
