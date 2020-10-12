@@ -52,8 +52,7 @@ def edit(id):
   conn.close()
   
   return customer
-
-
+  
 def update(*args):
   conn = sqlite3.connect('sqlite.db')
   cursor = conn.cursor()

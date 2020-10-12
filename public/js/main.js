@@ -138,6 +138,72 @@ class Bicycle{
     location.href= "/search/customer/" + query;
   }
 
+  registerForm(bicycles, customers){
+    for(var i=0; i<bicycles.length; i++){
+      var brand = bicycles[i][1];
+      var amount = bicycles[i][4];
+      if(amount > 0)
+        $('#bikelist').append(`<option value='[${bicycles[i][0]}, "${brand}"]'>${brand}</option>`);
+    }
+
+    for(var i=0; i<customers.length; i++){
+      var name = customers[i][1];
+      $('#customerlist').append(`<option value='[${customers[i][0]}, "${name}"]'>${name}</option>`);
+    }
+  }
+
+  showRegister(registers, sortIndex){
+    var html = '';
+    
+    if(registers.length > 0){
+      html += "<table>";
+      html += "<tr>";
+      for(var k in {id:1, customer:1, bicycle:1, 'Rental Date':1, 'Return Date':1}){
+        html += "<th>" + k.toUpperCase() + "</th>";
+      }
+      html += "<th>OPTION</th>";
+      html += "</tr>";
+
+      for(var i=0; i<registers.length; i++){
+        html += "<tr>";
+        html +=  "<td>" + (i+1) + "</td>";
+        for(var j in registers[i]){
+          if(j > 1){
+            if(j == 5){
+              if(registers[i][j] == "1990-07-30")
+                html += `<td class='return-date'><a href='/register/returndate/${registers[i][0]}/${registers[i][1]}'><img src='/static/images/return.png' /></a></td>`;
+              else
+                html += "<td class='return-date'>" + registers[i][j] + "</td>";
+              
+            }else{
+              html += "<td>" + registers[i][j] + "</td>";
+            }
+          }
+        }
+        html += `<td class="option"><a href="/register/delete/${registers[i][0]}" class="delete" >Delete</a></td>`;
+        html += "</tr>";
+      }
+
+      html += "</table>";
+    }
+
+    document.getElementById("table").innerHTML = html;
+    document.getElementById("regiskey").selectedIndex = sortIndex;
+  }
+
+  sortRegister(){
+    var element = document.getElementById("regiskey");
+    var sortIndex = element.selectedIndex;
+    var key = element.options[sortIndex].value;
+
+    window.location.href = "/register/" + key + "/" + sortIndex;
+  }
+
+  searchRegister(){
+    var query = $("#query").val();
+    location.href= "/search/register/" + query;
+  }
+
 }//end of class
 
 var bicycle = new Bicycle();

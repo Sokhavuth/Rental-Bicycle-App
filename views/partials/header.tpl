@@ -22,7 +22,7 @@
         <ul class="menu" id="menu">
           <li><a href="/">Bicycle</a></li>
           <li><a href="/customer">Customer</a></li>
-          <li><a>Register</a></li>
+          <li><a href="/register">Register</a></li>
           <li><a>Top Rental</a></li>
         </ul>
       </nav>

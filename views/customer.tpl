@@ -1,10 +1,6 @@
-<!--\views\bikeform.tpl-->
+<!--\views\customer.tpl-->
 
 %include("./partials/header.tpl")
-
-<style>
-
-</style>
 
 <div class="main" id="main">
   <div class="content" id="content">

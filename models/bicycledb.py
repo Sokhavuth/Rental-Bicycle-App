@@ -71,6 +71,28 @@ def update(*args):
   conn.commit()
   conn.close()
 
+def amountPlus(*args):
+  conn = sqlite3.connect('sqlite.db')
+  cursor = conn.cursor()
+
+  sql = "UPDATE BICYCLE SET AMOUNT= AMOUNT+1 WHERE ROWID=?"
+  
+  cursor.execute(sql, args)
+  
+  conn.commit()
+  conn.close()
+
+def amountMinus(*args):
+  conn = sqlite3.connect('sqlite.db')
+  cursor = conn.cursor()
+
+  sql = "UPDATE BICYCLE SET AMOUNT= AMOUNT-1 WHERE ROWID=?"
+  
+  cursor.execute(sql, args)
+  
+  conn.commit()
+  conn.close()
+
 def delete(id):
   conn = sqlite3.connect('sqlite.db')
   cursor = conn.cursor()

@@ -115,6 +115,15 @@ td.option img:hover{
   cursor:pointer;
 }
 
+td.return-date{
+  text-align: center;
+}
+
+td.return-date:hover{
+  cursor: pointer;
+  opacity: .7;
+}
+
 footer{
   background: lightgrey;
   margin-top: 20px;
