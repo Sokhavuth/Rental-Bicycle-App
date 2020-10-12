@@ -10,9 +10,10 @@
     
     <div id="table-customer"></div>
     <div id="table-bicycle"></div>
-    
+    <script src="/static/scripts/jQuery.js"></script>
+    <script src="/static/scripts/main.js"></script>
     <script>
-      $( document ).ready(function() {
+      $(document).ready(function() {
         bicycle.showTopRental({{!data['toprentals']}});
       });
     
