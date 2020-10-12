@@ -1,4 +1,4 @@
-<!--\views\register.tpl-->
+<!--\views\toprental.tpl-->
 
 %include("./partials/header.tpl")
 
