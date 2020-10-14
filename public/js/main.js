@@ -52,7 +52,7 @@ class Bicycle{
           if(j > 0)
             html += "<td>" + bicycles[i][j] + "</td>";
         }
-        html += `<td class="option"><a href="/bikeform/edit/${bicycles[i][0]}" class="edit">Edit</a>|<a href="/bikeform/delete/${bicycles[i][0]}" class="delete" >Delete</a></td>`;
+        html += `<td class="option"><a href="/bikeform/edit/${bicycles[i][0]}" class="edit">Edit</a><a href="/bikeform/delete/${bicycles[i][0]}" class="delete" ></a></td>`;
         html += "</tr>";
       }
 
