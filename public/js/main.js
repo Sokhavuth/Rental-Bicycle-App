@@ -114,7 +114,7 @@ class Bicycle{
           if(j > 0)
             html += "<td>" + customers[i][j] + "</td>";
         }
-        html += `<td class="option"><a href="/custform/edit/${customers[i][0]}" class="edit">Edit</a>|<a href="/customer/delete/${customers[i][0]}" class="delete" >Delete</a></td>`;
+        html += `<td class="option"><a href="/custform/edit/${customers[i][0]}" class="edit">Edit</a><a href="/customer/delete/${customers[i][0]}" class="delete" ></a></td>`;
         html += "</tr>";
       }
 
@@ -180,7 +180,7 @@ class Bicycle{
             }
           }
         }
-        html += `<td class="option"><a href="/register/delete/${registers[i][0]}" class="delete" >Delete</a></td>`;
+        html += `<td class="option"><a href="/register/delete/${registers[i][0]}" class="delete" ></a></td>`;
         html += "</tr>";
       }
 
